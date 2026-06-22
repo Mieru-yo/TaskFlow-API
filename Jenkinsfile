@@ -45,4 +45,16 @@ pipeline {
       }
     }
   }
+
+  post {
+    always {
+      echo "Build #${BUILD_NUMBER} complete — coverage report available in the coverage/ directory"
+    }
+    success {
+      echo "Build #${BUILD_NUMBER} succeeded. TaskFlow API is live at http://localhost/api/tasks"
+    }
+    failure {
+      echo "Build #${BUILD_NUMBER} failed. Check the console output above for the failing stage."
+    }
+  }
 }
