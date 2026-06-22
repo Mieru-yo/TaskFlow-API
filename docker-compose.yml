@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    env_file: .env
+    depends_on:
+      - mongodb
+    networks:
+      - taskflow-net
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:7
+    networks:
+      - taskflow-net
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api
+    networks:
+      - taskflow-net
+    restart: unless-stopped
+
+networks:
+  taskflow-net:
+    driver: bridge
