@@ -39,7 +39,7 @@ services:
     restart: unless-stopped
 
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
+    build: ./jenkins
     user: root
     ports:
       - "8080:8080"
