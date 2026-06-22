@@ -19,5 +19,8 @@
     "jest": "^29.7.0",
     "supertest": "^6.3.3",
     "mongodb-memory-server": "^9.1.1"
+  },
+  "mongodbMemoryServer": {
+    "version": "7"
   }
 }
