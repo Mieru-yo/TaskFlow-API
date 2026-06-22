@@ -1,4 +1,4 @@
-process.env.MONGOMS_VERSION = '7';
+process.env.MONGOMS_VERSION = '7.0.14';
 
 module.exports = {
   testEnvironment: 'node',
