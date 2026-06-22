@@ -30,5 +30,19 @@ pipeline {
         sh 'npm test'
       }
     }
+
+    stage('Build Docker') {
+      steps {
+        sh """
+          docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:build-${BUILD_NUMBER} .
+        """
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'docker compose up -d'
+      }
+    }
   }
 }
