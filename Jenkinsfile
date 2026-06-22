@@ -44,6 +44,13 @@ pipeline {
         sh 'docker compose up -d'
       }
     }
+
+    stage('Notify') {
+      steps {
+        echo "TaskFlow API build #${BUILD_NUMBER} deployed successfully."
+        echo "Application available at: http://localhost/api/tasks"
+      }
+    }
   }
 
   post {
