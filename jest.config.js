@@ -1,3 +1,5 @@
+process.env.MONGOMS_VERSION = '7';
+
 module.exports = {
   testEnvironment: 'node',
   coverageDirectory: 'coverage',
