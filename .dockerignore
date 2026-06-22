@@ -1,0 +1,22 @@
+# Dependencies — reinstalled inside the image via npm ci
+node_modules
+
+# Test & coverage artifacts
+coverage
+tests
+
+# Version control & CI files
+.git
+.gitignore
+Jenkinsfile
+jenkins
+
+# Local environment & logs — never bake into the image
+.env
+*.log
+.DS_Store
+
+# Infra / docs not needed inside the API image
+docker-compose.yml
+nginx
+README.md
